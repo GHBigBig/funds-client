@@ -21,21 +21,23 @@
 
 <body>
 
+  <div id="app-container">
 
-  <div class="d-flex  justify-content-center align-items-center flex-column vh-100">
-    <div class="card adaption-width">
-      <div class="card-body">
-        <h2 class="card-title">资金管理系统</h2>
-        <div id="app-container">
+    <div class="d-flex  justify-content-center align-items-center flex-column vh-100">
+      <div class="card adaption-width">
+        <div class="card-body">
+          <h2 class="card-title">资金管理系统</h2>
+          <!-- 组件 -->
           <!-- <register-form></register-form> -->
-          <login-form></login-form>
+          <!-- <login-form></login-form> -->
+
+          <!-- 动态切换组件 -->
+          <component :is="currentComponent" @toggle-form="currentTab = $event"></component>
+
+          <reg-modal v-if="currentTab === 'register'"></reg-modal>
         </div>
-        
       </div>
     </div>
-
-
-
   </div>
 </body>
 

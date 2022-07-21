@@ -1,14 +1,13 @@
 /**
  * 发起 Ajax 请求
  * @param {String} url 请求的 url
- * @param {any} aaa 需要发送的数据
+ * @param {any} data 需要发送的数据
  * @param {String} method 请求方法的名称
  * @param {Boolean} urlencode 是否使用 application/x-www-form-urlencoded 格式发送数据
  * @returns Promise
  */
-export function sendAjax(url, data, method = 'GET', urlencode) {
+export function sendAjax(url, data, method = 'GET', urlencode = false) {
     return new Promise((resolve, reject) => {
-        console.log(`data: ${JSON.stringify(data)}`)
 
         const handler = function () {
             if (this.readyState !== 4) {
