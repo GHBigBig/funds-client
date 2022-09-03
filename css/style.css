@@ -1,8 +1,9 @@
 body {
-    background: url('/img/background.jpg');
+    background: var(--bs-gray-100);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    min-height: 100vh;
 }
 
 .adaption-width {
@@ -66,4 +67,24 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     /* color: var(--bs-gray-600); */
+}
+
+aside {
+    width: 200px;
+    height: calc(100vh - 66px);
+}
+
+main {
+    width: calc(100vw - 200px);
+    height: calc(100vh - 66px);
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+li:hover {
+    background-color: var(--bs-gray-700);
+}
+
+.sortIcon {
+    content: url(../img/caret-down-fill.svg); 
 }
